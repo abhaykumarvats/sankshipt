@@ -1,0 +1,23 @@
+{
+  "name": "sankshipt",
+  "version": "1.0.0",
+  "description": "Shorten URLs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhaykv04/sankshipt.git"
+  },
+  "author": "abhaykv04",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/abhaykv04/sankshipt/issues"
+  },
+  "homepage": "https://github.com/abhaykv04/sankshipt#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.0.16"
+  }
+}
