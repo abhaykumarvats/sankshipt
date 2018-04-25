@@ -4,8 +4,7 @@ mongoose.connect(process.env.DATABASE_URL);
 const Schema = new mongoose.Schema({
     _id: {
         type: Number,
-        required: true,
-        unique: true
+        required: true
     },
     original_url: {
         type: String,
@@ -19,4 +18,4 @@ const Schema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Schema', Schema);
+module.exports = mongoose.model('URL', Schema);
