@@ -41,7 +41,7 @@ app.get('/new/*', (req, res) => {
     let original_url = req.params[0];
 
     // Check for duplicacy
-    URL.findOne({ original_url: original_url }, (err, doc) => {
+    URL.findOne({ original_url: original_url }, { __v: 0 }, (err, doc) => {
         // Check for error
         assert.equal(err, null);
 
@@ -64,7 +64,7 @@ app.get('/new/*', (req, res) => {
                     URL.create(json, (err, doc) => {
                         // Check for error
                         assert.equal(err, null);
-                        // Log doc, send back as json
+                        // Log doc and send back as json
                         console.log(doc);
                         res.json(doc);
                     });
