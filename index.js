@@ -15,6 +15,7 @@ app.get('/', (req, res) => {
 
 // GET method for /:id
 app.get('/:id', (req, res) => {
+
     // Invalid ID provided
     if (isNaN(req.params.id)) {
         return res.status(400).send('400: Bad Request: ID must be a number');
@@ -22,6 +23,7 @@ app.get('/:id', (req, res) => {
 
     // Valid ID provided, find relevant doc
     URL.findOne({ _id: Number(req.params.id) }, (err, doc) => {
+
         // Check for error
         assert.equal(err, null);
 
@@ -37,20 +39,25 @@ app.get('/:id', (req, res) => {
 
 // GET method for /new/*
 app.get('/new/*', (req, res) => {
+
     // Extract original_url from params
     let original_url = req.params[0];
 
     // Check for duplicacy
     URL.findOne({ original_url: original_url }, { __v: 0 }, (err, doc) => {
+
         // Check for error
         assert.equal(err, null);
 
         // No duplicate found
         if (!doc) {
+
             // Validate provided URL
             if (validUrl.isUri(original_url)) {
+
                 // URL is valid, find last doc
                 URL.findOne().sort({ _id: -1 }).exec((err, doc) => {
+
                     // Check for error
                     assert.equal(err, null);
 
@@ -62,8 +69,10 @@ app.get('/new/*', (req, res) => {
 
                     // Save json in db
                     URL.create(json, (err, doc) => {
+
                         // Check for error
                         assert.equal(err, null);
+
                         // Log doc and send back as json
                         console.log(doc);
                         res.json(doc);
