@@ -119,6 +119,6 @@ Visit an already shortened URL with its unique number ID.
 `Sankshipt` in `Hindi` means `Abridged`
 
 # Thanks
-To [Irene Ros](#https://github.com/iros) for the doc [template](#https://gist.github.com/iros/3426278).
+To [Irene Ros](https://github.com/iros) for the doc [template](https://gist.github.com/iros/3426278).
 
 #### Signing-off v1.0, Abhay Kumar
